@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <title>Easter Surprise</title>
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+      /* Inline styling for the answerBlock to be hidden initially */
+      #answerBlock {
+        display: none;
+      }
+
+      /* Style the h2 to match the h1 style */
+      #answerBlock h2 {
+        font-size: 2.5rem; /* Adjust as needed */
+        font-weight: bold;
+        text-align: center;
+        color: inherit; /* Ensure color matches */
+      }
+    </style>
+  </head>
+  <body class="is-preload">
+    <!-- Header -->
+    <section id="header">
+      <header class="major">
+        <h1>Do you know da way?</h1>
+        <p>What is the answer?</p>
+        <form id="answerForm">
+          <div class="col-6 col-12-xsmall">
+            <input
+              type="text"
+              name="answer"
+              id="answer"
+              value=""
+              placeholder="Your Answer (it is HELLO)"
+            />
+            <input type="submit" value="Submit Answer" class="primary" />
+          </div>
+        </form>
+        <!-- The answer block is in the HTML, hidden initially using inline styling -->
+        <p class="major" id="answerBlock" style="display: none"></p>
+      </header>
+    </section>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrollex.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script>
+      // Handle the form submission
+      document
+        .getElementById("answerForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent the form from submitting normally
+
+          var answer = document.getElementById("answer").value.trim(); // Get the answer value
+
+          // Check if the answer is correct (HELLO)
+          if (answer.toUpperCase() === "HELLO") {
+            // Check if the h2 element already exists, if not, create and append it
+            if (!document.getElementById("answerBlock").querySelector("h2")) {
+              // Create the h2 element
+              var heading = document.createElement("h2");
+              heading.textContent = "This is the answer"; // Set the text
+
+              // Append the h2 element to the answerBlock
+              document.getElementById("answerBlock").appendChild(heading);
+            }
+
+            // Reveal the answer block if the answer is correct
+            document.getElementById("answerBlock").style.display = "block";
+          } else {
+            // Show an alert if the answer is incorrect
+            alert("Wrong! Try again.");
+            document.getElementById("answer").value = ""; // Optionally clear the input field
+          }
+        });
+    </script>
+  </body>
+</html>
