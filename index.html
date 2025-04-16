@@ -28,6 +28,14 @@
     <section id="header">
       <header class="major">
         <h1>Do you know da way?</h1>
+
+        <p>19 7 4_18 14 13_14 5_12 0 13_8 18_6 14 8 13 6_19 14_1 4</p>
+        <p>3 4 11 8 21 4 17 4 3_8 13 19 14_19 7 4_7 0 13 3 18_14 5_12 4 13.</p>
+        <p>19 7 4 24_22 8 11 11_10 8 11 11_7 8 12,</p>
+        <p>0 13 3_0 5 19 4 17_19 7 17 4 4_3 0 24 18</p>
+        <p>7 4_22 8 11 11_17 8 18 4.</p>
+
+        <p>The hint: A-Z = 0-25</p>
         <p>What is the answer?</p>
         <form id="answerForm">
           <div class="col-6 col-12-xsmall">
@@ -36,7 +44,7 @@
               name="answer"
               id="answer"
               value=""
-              placeholder="Your Answer (it is HELLO)"
+              placeholder="Your Answer"
             />
             <input type="submit" value="Submit Answer" class="primary" />
           </div>
@@ -65,12 +73,12 @@
           var answer = document.getElementById("answer").value.trim(); // Get the answer value
 
           // Check if the answer is correct (HELLO)
-          if (answer.toUpperCase() === "HELLO") {
+          if (answer.toUpperCase() === "MARK 9:31") {
             // Check if the h2 element already exists, if not, create and append it
             if (!document.getElementById("answerBlock").querySelector("h2")) {
               // Create the h2 element
               var heading = document.createElement("h2");
-              heading.textContent = "This is the answer"; // Set the text
+              heading.textContent = "Correct!"; // Set the text
 
               // Append the h2 element to the answerBlock
               document.getElementById("answerBlock").appendChild(heading);
